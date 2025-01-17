@@ -29,12 +29,13 @@ pipeline {
             steps {
                 sh 'docker build -t vig706/test:1 .'
             }
+          }
 
-              stage('Build and Tag Docker File') {
+          stage('Build and Tag Docker File') {
             steps {
                 sh 'docker run -it -d --name c1 -p 8081:8080 vig706/test:1'
             }
         }
         }
     }
-}
+
