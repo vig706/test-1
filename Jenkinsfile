@@ -33,7 +33,11 @@ pipeline {
 
           stage('Containerisation') {
             steps {
-                sh 'docker run -it -d --name c1 -p 8081:8080 vig706/test:1'
+                sh '''
+                docker stop c1
+                docker rm c1
+                docker run -it -d --name c1 -p 8081:8080 vig706/test:1
+                '''
             }
         }
         }
