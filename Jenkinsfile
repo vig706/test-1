@@ -31,7 +31,7 @@ pipeline {
             }
           }
 
-          stage('Build and Tag Docker File') {
+          stage('Containerisation') {
             steps {
                 sh 'docker run -it -d --name c1 -p 8081:8080 vig706/test:1'
             }
